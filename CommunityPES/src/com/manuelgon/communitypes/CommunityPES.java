@@ -20,6 +20,12 @@ public class CommunityPES extends Activity {
 		Intent i = new Intent(this, NuevoPartidoAmistoso.class);
 		startActivity(i);
 	}
+	
+	//TODO: Cambiar este metodo a Gestion Usuarios y dentro de el llamar a crear usuario
+	public void lanzarGestionDeUsuarios(View view) {
+		Intent i = new Intent(this, GestionUsuarios.class);
+		startActivity(i);
+	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {

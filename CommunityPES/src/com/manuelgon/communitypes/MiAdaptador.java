@@ -26,18 +26,6 @@ public class MiAdaptador extends BaseAdapter {
 		View view = inflater.inflate(R.layout.elemento_lista, null, true);
 		TextView textView = (TextView) view.findViewById(R.id.nombre);
 		textView.setText(lista.elementAt(position));
-//		ImageView imageView = (ImageView) view.findViewById(R.id.icono);
-//		switch (Math.round((float) Math.random() * 3)) {
-//		case 0:
-//			imageView.setImageResource(R.drawable.asteroide1);
-//			break;
-//		case 1:
-//			imageView.setImageResource(R.drawable.asteroide2);
-//			break;
-//		default:
-//			imageView.setImageResource(R.drawable.asteroide3);
-//			break;
-//		}
 		return view;
 	}
 

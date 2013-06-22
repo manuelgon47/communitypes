@@ -18,8 +18,7 @@ public class SeleccionJugadores extends ListActivity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.seleccion_jugadores);
-		setListAdapter(new MiAdaptador(this,
-				CommunityPES.almacenUsuarios.listaPuntuaciones()));
+		setListAdapter(new MiAdaptador(this, CommunityPES.almacenUsuarios.listaPuntuaciones()));
 	}
 	
 	@Override

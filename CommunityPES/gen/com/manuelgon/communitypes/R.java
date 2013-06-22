@@ -14,41 +14,47 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int LinearLayout1=0x7f070001;
-        public static final int RelativeLayout1=0x7f07000f;
-        public static final int aceptarPartidoAmistoso=0x7f07000c;
-        public static final int bAmistoso=0x7f070002;
-        public static final int bCopa=0x7f070003;
-        public static final int bEstad=0x7f070005;
-        public static final int bLiga=0x7f070004;
-        public static final int bUsuarios=0x7f070006;
-        public static final int button1=0x7f070015;
-        public static final int editTextJugador1Amistoso=0x7f070008;
-        public static final int editTextJugador2Amistoso=0x7f07000a;
-        public static final int jugador1amistoso=0x7f07000e;
-        public static final int jugador2amistoso=0x7f07000b;
-        public static final int linearLayout1=0x7f070010;
-        public static final int linearLayout2=0x7f070012;
-        public static final int linearLayout3=0x7f070016;
-        public static final int menu_settings=0x7f070019;
+        public static final int LinearLayout1=0x7f070003;
+        public static final int RelativeLayout1=0x7f070012;
+        public static final int aceptarPartidoAmistoso=0x7f07000e;
+        public static final int bAmistoso=0x7f070004;
+        public static final int bCopa=0x7f070005;
+        public static final int bEstad=0x7f070007;
+        public static final int bLiga=0x7f070006;
+        public static final int bUsuarios=0x7f070008;
+        public static final int button1=0x7f070001;
+        public static final int button2=0x7f070002;
+        public static final int editTextJugador1Amistoso=0x7f07000a;
+        public static final int editTextJugador2Amistoso=0x7f07000c;
+        public static final int introduceNombreUsuario=0x7f07000f;
+        public static final int jugador1amistoso=0x7f070011;
+        public static final int jugador2amistoso=0x7f07000d;
+        public static final int linearLayout1=0x7f070013;
+        public static final int linearLayout2=0x7f070015;
+        public static final int linearLayout3=0x7f070018;
+        public static final int listView1=0x7f07001b;
+        public static final int menu_settings=0x7f07001c;
         public static final int nombre=0x7f070000;
-        public static final int numeroJugadores=0x7f07000d;
-        public static final int resultadoJugador1=0x7f070013;
-        public static final int resultadoJugador2=0x7f070014;
-        public static final int textView1=0x7f070009;
-        public static final int textView2=0x7f070011;
-        public static final int textView3=0x7f070007;
-        public static final int textView4=0x7f070017;
-        public static final int textView5=0x7f070018;
+        public static final int numeroJugadores=0x7f070010;
+        public static final int resultadoJugador1=0x7f070016;
+        public static final int resultadoJugador2=0x7f070017;
+        public static final int textView1=0x7f07000b;
+        public static final int textView2=0x7f070014;
+        public static final int textView3=0x7f070009;
+        public static final int textView4=0x7f070019;
+        public static final int textView5=0x7f07001a;
     }
     public static final class layout {
         public static final int copy_of_nuevo_partido_amistoso=0x7f030000;
         public static final int elemento_lista=0x7f030001;
-        public static final int main=0x7f030002;
-        public static final int nuevo_partido_amistoso=0x7f030003;
-        public static final int numero_jugadores=0x7f030004;
-        public static final int resultado_partido_amistoso=0x7f030005;
-        public static final int seleccion_jugadores=0x7f030006;
+        public static final int gestion_usuarios=0x7f030002;
+        public static final int main=0x7f030003;
+        public static final int nuevo_partido_amistoso=0x7f030004;
+        public static final int nuevo_usuario=0x7f030005;
+        public static final int numero_jugadores=0x7f030006;
+        public static final int resultado_partido_amistoso=0x7f030007;
+        public static final int seleccion_jugadores=0x7f030008;
+        public static final int ver_usuarios_existentes=0x7f030009;
     }
     public static final class menu {
         public static final int main=0x7f060000;
@@ -63,6 +69,7 @@ public final class R {
         public static final int gion=0x7f040021;
         public static final int guardar=0x7f04000e;
         public static final int hello_world=0x7f040002;
+        public static final int introduzcaNombre=0x7f040026;
         public static final int jugador1=0x7f040024;
         public static final int jugador2=0x7f040025;
         public static final int marcame=0x7f040011;
@@ -75,6 +82,7 @@ public final class R {
         public static final int nuevoUsuario=0x7f040009;
         public static final int nusuarios=0x7f040015;
         public static final int ok=0x7f040023;
+        public static final int prueba=0x7f040028;
         public static final int resultado=0x7f040022;
         public static final int seleccionJugadores=0x7f04001c;
         public static final int seleccionaJugador1=0x7f04001e;
@@ -90,6 +98,7 @@ public final class R {
         public static final int title_activity_pcrearusuario=0x7f040010;
         public static final int title_activity_seleccion_de_jugadores=0x7f040017;
         public static final int title_activity_ver_usuarios=0x7f04000f;
+        public static final int usuariosBD=0x7f040027;
         public static final int verEst=0x7f040006;
         public static final int verUsuario=0x7f04000b;
     }

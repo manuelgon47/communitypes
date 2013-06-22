@@ -39,5 +39,8 @@
     <string name="ok">OK</string>
     <string name="jugador1">Jugador 1 </string>
     <string name="jugador2">Jugador 2 </string>
+    <string name="introduzcaNombre">Introduzca su nombre de usuario:</string>
+    <string name="usuariosBD">Usuarios en Base de Datos</string>
+    <string name="prueba">Esto es una prueba</string>
 
 </resources>
