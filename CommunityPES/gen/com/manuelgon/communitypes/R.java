@@ -36,6 +36,8 @@ public final class R {
         public static final int estPerdidos=0x7f07000e;
         public static final int estUsuario=0x7f070009;
         public static final int introduceNombreUsuario=0x7f07001b;
+        public static final int juga1=0x7f070004;
+        public static final int juga2=0x7f070006;
         public static final int jugador1amistoso=0x7f07001d;
         public static final int jugador2amistoso=0x7f070019;
         public static final int linearLayout1=0x7f07001f;
@@ -48,9 +50,7 @@ public final class R {
         public static final int resultadoJugador2=0x7f070022;
         public static final int textView1=0x7f070002;
         public static final int textView2=0x7f070003;
-        public static final int textView3=0x7f070004;
         public static final int textView4=0x7f070005;
-        public static final int textView5=0x7f070006;
         public static final int textView6=0x7f070007;
         public static final int textView7=0x7f070008;
     }

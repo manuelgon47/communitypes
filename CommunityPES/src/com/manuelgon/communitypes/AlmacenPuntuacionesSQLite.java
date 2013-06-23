@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Vector;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -57,8 +58,7 @@ public class AlmacenPuntuacionesSQLite extends SQLiteOpenHelper implements IAlma
 	}
 
 	@Override
-	public void guardarPuntuaciones(String jugador, Integer golesFavor,
-			Integer golesContra, Boolean ganado) {
+	public void guardarPuntuaciones(String jugador, Integer golesFavor,	Integer golesContra, Boolean ganado) {
 		// TODO Auto-generated method stub
 		
 	}
@@ -118,6 +118,38 @@ public class AlmacenPuntuacionesSQLite extends SQLiteOpenHelper implements IAlma
 		}
 		cursor.close();
 		return aux;
+	}
+
+	@Override
+	public void partidoAmistoso(String jugadorUno, String jugadorDos, String ganador, Integer resjuguno, Integer resjugdos, Boolean empate) {
+		// TODO Auto-generated method stub
+		if(empate){
+			
+		}
+		
+	}
+	public Integer obtenerNumeroPartidosJugados(String nombreJugador){
+		Integer ret = 0;
+		SQLiteDatabase db = getReadableDatabase();
+		Cursor cursor = db.rawQuery("SELECT jugados FROM Amistosos WHERE nombreUsuario='"+nombreJugador+"'", null);
+		cursor.moveToNext();
+		ret = cursor.getInt(0);
+		return ret;
+	}
+
+	@Override
+	public void empate(String jugadorUno, String jugadorDos, Integer resjuguno,	Integer resjugdos) {
+		// TODO Auto-generated method stub
+		Integer jugadosJugUno = obtenerNumeroPartidosJugados(jugadorUno);
+		Integer jugadosJugDos = obtenerNumeroPartidosJugados(jugadorDos);
+		SQLiteDatabase db = getWritableDatabase();
+		System.out.println("ESTO ES UNA PRUEBA ----------------------------------------------------");
+		ContentValues valoresJugUno = new ContentValues();
+		valoresJugUno.put("nombreUsuario", jugadorUno);
+		valoresJugUno.put("golesFavor", resjuguno);
+		valoresJugUno.put("golesContra", resjugdos);
+		valoresJugUno.put("jugados", jugadosJugUno+1);
+		
 	}
 
 

@@ -10,4 +10,7 @@ public interface IAlmacenarPuntuaciones {
 	Usuario obtenerUsuario(String usuario);
 	List<Usuario> obtenerUsuarios();
 	Vector<String> obtenerNombreUsuarios();
+	void partidoAmistoso(String jugadorUno, String jugadorDos, String ganador, Integer resjuguno, Integer resjugdos, Boolean empate);
+	void empate (String jugadorUno, String jugadorDos, Integer resjuguno, Integer resjugdos);
+	Integer obtenerNumeroPartidosJugados(String nombreJugador);
 }

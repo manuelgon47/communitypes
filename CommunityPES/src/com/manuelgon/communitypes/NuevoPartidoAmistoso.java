@@ -51,6 +51,8 @@ public class NuevoPartidoAmistoso extends Activity{
 	
 	public void lanzarResultadoPartidoAmistoso(View view){
 		Intent i = new Intent(this, ResultadoPartidoAmistoso.class);
+		i.putExtra("jug1", jugador1);
+		i.putExtra("jug2", jugador2);
 		startActivity(i);
 	}
 	
