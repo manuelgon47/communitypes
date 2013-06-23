@@ -4,6 +4,7 @@
     <string name="app_name">CommunityPES</string>
     <string name="menu_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
+    <string name="nombreAplicacion">Community PES</string>
     <string name="nuevoAmistodo">Nuevo partido amistoso</string>
     <string name="nuevaCopa">Nueva copa</string>
     <string name="nuevaLiga">Nueva Liga</string>
