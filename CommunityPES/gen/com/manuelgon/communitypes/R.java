@@ -82,7 +82,6 @@ public final class R {
         public static final int nuevoUsuario=0x7f040009;
         public static final int nusuarios=0x7f040015;
         public static final int ok=0x7f040023;
-        public static final int prueba=0x7f040028;
         public static final int resultado=0x7f040022;
         public static final int seleccionJugadores=0x7f04001c;
         public static final int seleccionaJugador1=0x7f04001e;
