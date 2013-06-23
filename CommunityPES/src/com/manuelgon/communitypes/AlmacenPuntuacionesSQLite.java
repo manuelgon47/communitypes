@@ -68,17 +68,17 @@ public class AlmacenPuntuacionesSQLite extends SQLiteOpenHelper implements IAlma
 		Usuario u = new Usuario();
 		//List<String> aux = new ArrayList<String>();
 		SQLiteDatabase db = getReadableDatabase();
-		Cursor cursor = db.rawQuery("SELECT * FROM Amistosos WHERE nombreUsuario="+usuario, null);
+		Cursor cursor = db.rawQuery("SELECT * FROM Amistosos WHERE nombreUsuario='"+usuario+"'", null);
 		while (cursor.moveToNext()){
-			u.setNombreUsuario(cursor.getString(1));
-			u.setGolesFavor(cursor.getInt(2));
-			u.setGolesContra(cursor.getInt(3));
-			u.setJugados(cursor.getInt(4));
-			u.setGanados(cursor.getInt(5));
-			u.setPerdidos(cursor.getInt(6));
-			u.setEmpatados(cursor.getInt(7));
-			u.setGanadosConsecutivos(cursor.getInt(8));
-			u.setPerdidosConsecutivos(cursor.getInt(9));
+			u.setNombreUsuario(cursor.getString(0));
+			u.setGolesFavor(cursor.getInt(1));
+			u.setGolesContra(cursor.getInt(2));
+			u.setJugados(cursor.getInt(3));
+			u.setGanados(cursor.getInt(4));
+			u.setPerdidos(cursor.getInt(5));
+			u.setEmpatados(cursor.getInt(6));
+			u.setGanadosConsecutivos(cursor.getInt(7));
+			u.setPerdidosConsecutivos(cursor.getInt(8));
 		}
 		cursor.close();
 		return u;

@@ -18,6 +18,7 @@ public class MiAdaptador extends BaseAdapter {
 		super();
 		this.actividad = actividad;
 		this.lista = lista;
+		System.out.println("LLego hasta el adaptador");
 	}
 
 	public View getView(int position, View convertView, ViewGroup parent) {

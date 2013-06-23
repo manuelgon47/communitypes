@@ -12,13 +12,15 @@ import android.widget.Toast;
 public class SeleccionJugadores extends ListActivity {
 
 	private int cont = 0;
-	private String jug1;
-	private String jug2;
+	private String jug1 = "";
+	private String jug2 = "";
+	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.seleccion_jugadores);
-		setListAdapter(new MiAdaptador(this, CommunityPES.almacenUsuarios.listaPuntuaciones()));
+		setContentView(R.layout.ver_usuarios_existentes);
+		IAlmacenarPuntuaciones dbHelper = CommunityPES.baseDatos;
+		setListAdapter(new MiAdaptador(this, dbHelper.obtenerNombreUsuarios()));
 	}
 	
 	@Override

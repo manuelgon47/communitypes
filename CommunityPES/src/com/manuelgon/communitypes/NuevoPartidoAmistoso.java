@@ -44,7 +44,8 @@ public class NuevoPartidoAmistoso extends Activity{
 	}
 	
 	public void lanzarSeleccionJugadores(View view) {
-		Intent i = new Intent(this, SeleccionJugadores.class);
+		System.out.println("Voy a ir a SeleccionJugadores");
+		Intent i = new Intent(this, SeleccionJugadoresDos.class);
 		startActivity(i);
 	}
 	

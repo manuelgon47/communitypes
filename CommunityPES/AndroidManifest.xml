@@ -23,12 +23,13 @@
             </intent-filter>
         </activity>
         <activity android:name="NumeroJugadores" android:label="NumeroJugadores"></activity>
-        <activity android:label="SeleccionJugadores" android:name="SeleccionJugadores"></activity>
         <activity android:label="NuevoPartidoAmistoso" android:name="NuevoPartidoAmistoso"></activity>
         <activity android:label="ResultadoPartidoAmistoso" android:name="ResultadoPartidoAmistoso"></activity>
         <activity android:name="NuevoUsuario" android:label="NuevoUsuario"></activity>
         <activity android:name="VerUsuariosExistentes" android:label="VerUsuariosExistentes"></activity>
         <activity android:name="GestionUsuarios" android:label="GestionUsuarios"></activity>
+        <activity android:name="EstadisticasUsuario" android:label="EstadisticasUsuario"></activity>
+        <activity android:name="SeleccionJugadoresDos" android:label="SeleccionJugadoresDos"></activity>
     </application>
 
 </manifest>

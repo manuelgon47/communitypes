@@ -9,9 +9,11 @@ import android.view.View;
 public class CommunityPES extends Activity {
 
 	public static AlmacenUsuariosArray almacenUsuarios = new AlmacenUsuariosArray();
+	public static IAlmacenarPuntuaciones baseDatos;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+		baseDatos = new AlmacenPuntuacionesSQLite(this);
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
 	}
