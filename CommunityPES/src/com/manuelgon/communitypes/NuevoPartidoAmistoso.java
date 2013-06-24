@@ -46,6 +46,7 @@ public class NuevoPartidoAmistoso extends Activity{
 	public void lanzarSeleccionJugadores(View view) {
 		System.out.println("Voy a ir a SeleccionJugadores");
 		Intent i = new Intent(this, SeleccionJugadoresDos.class);
+		i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 		startActivity(i);
 	}
 	
@@ -53,29 +54,15 @@ public class NuevoPartidoAmistoso extends Activity{
 		Intent i = new Intent(this, ResultadoPartidoAmistoso.class);
 		i.putExtra("jug1", jugador1);
 		i.putExtra("jug2", jugador2);
+		i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 		startActivity(i);
 	}
 	
 	
-	private List<String> listaUsuarios(){
-		//Lista de usuarios
-		List<String> lu = new ArrayList<String>();
-		
-		//Abrimos la base de datos 'DBUsuarios' en modo escritura
-		UsuariosSQLiteHelper usdbh = new UsuariosSQLiteHelper(this, "DBUsuarios", null, 1);
-		SQLiteDatabase db = usdbh.getWritableDatabase();
-		String[] campos = new String[] {"nombre"};
-		Cursor c = db.query("Usuarios", campos, null, null, null, null, null);
-		
-		if(c.moveToFirst()){
-			do{
-				String nombre = c.getString(0);
-				// Imprimo por consola los nombres de los usuarios
-				System.out.println(nombre);
-				lu.add(nombre);
-			}while(c.moveToNext());
-		}
-		return lu;
+	public void onBackPressed(){
+		Intent i = new Intent(this, CommunityPES.class);
+		i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+		startActivity(i);
 	}
 	
 }

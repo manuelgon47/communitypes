@@ -274,5 +274,16 @@ public class AlmacenPuntuacionesSQLite extends SQLiteOpenHelper implements IAlma
 		return ret;
 	}
 
+	@Override
+	public Boolean exiteEnBD(String usuario) {
+		Boolean ret = false;
+		SQLiteDatabase db = getReadableDatabase();
+		Cursor cursor = db.rawQuery("SELECT nombreUsuario FROM Amistosos WHERE nombreUsuario='"+usuario+"'", null);
+		cursor.moveToNext();
+		if(cursor.getString(0) != null)
+			ret = true;
+		return ret;
+	}
+
 
 }

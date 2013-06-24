@@ -15,11 +15,19 @@ public class GestionUsuarios extends Activity{
 	
 	public void lanzarCrearUsuario (View view){
 		Intent i = new Intent(this, NuevoUsuario.class);
+		i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 		startActivity(i);
 	}
 	
 	public void lanzaVerUsuarios(View view){
 		Intent i = new Intent(this, VerUsuariosExistentes.class);
+		i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+		startActivity(i);
+	}
+	
+	public void onBackPressed(){
+		Intent i = new Intent(this, CommunityPES.class);
+		i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 		startActivity(i);
 	}
 }

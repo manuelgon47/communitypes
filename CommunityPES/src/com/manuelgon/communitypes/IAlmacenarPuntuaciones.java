@@ -18,4 +18,5 @@ public interface IAlmacenarPuntuaciones {
 	Integer obtenerNumeroPartidosEmpatados(String nombreJugador);
 	Integer obtenerNumeroGolesFavor(String nombreJugador);
 	Integer obtenerNumeroGolesContra(String nombreJugador);
+	Boolean exiteEnBD(String usuario);
 }

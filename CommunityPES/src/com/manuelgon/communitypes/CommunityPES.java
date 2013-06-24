@@ -20,12 +20,14 @@ public class CommunityPES extends Activity {
 	
 	public void lanzarNuevoPartidoAmistoso(View view) {
 		Intent i = new Intent(this, NuevoPartidoAmistoso.class);
+		i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 		startActivity(i);
 	}
 	
-	//TODO: Cambiar este metodo a Gestion Usuarios y dentro de el llamar a crear usuario
+	
 	public void lanzarGestionDeUsuarios(View view) {
 		Intent i = new Intent(this, GestionUsuarios.class);
+		i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 		startActivity(i);
 	}
 
@@ -36,4 +38,5 @@ public class CommunityPES extends Activity {
 		return true;
 	}
 
+	
 }

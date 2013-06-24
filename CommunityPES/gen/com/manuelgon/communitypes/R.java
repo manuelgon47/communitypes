@@ -16,8 +16,7 @@ public final class R {
     }
     public static final class id {
         public static final int LinearLayout1=0x7f070001;
-        public static final int LinearLayout2=0x7f070024;
-        public static final int RelativeLayout1=0x7f07001e;
+        public static final int LinearLayout2=0x7f070023;
         public static final int aceptarPartidoAmistoso=0x7f07001a;
         public static final int bAmistoso=0x7f070012;
         public static final int bCopa=0x7f070013;
@@ -40,10 +39,10 @@ public final class R {
         public static final int juga2=0x7f070006;
         public static final int jugador1amistoso=0x7f07001d;
         public static final int jugador2amistoso=0x7f070019;
-        public static final int linearLayout1=0x7f07001f;
+        public static final int linearLayout1=0x7f07001e;
         public static final int linearLayout2=0x7f070020;
-        public static final int linearLayout3=0x7f070023;
-        public static final int menu_settings=0x7f070025;
+        public static final int linearLayout3=0x7f07001f;
+        public static final int menu_settings=0x7f070024;
         public static final int nombre=0x7f070000;
         public static final int numeroJugadores=0x7f07001c;
         public static final int resultadoJugador1=0x7f070021;
@@ -92,6 +91,7 @@ public final class R {
         public static final int marcame=0x7f040012;
         public static final int menu_settings=0x7f040001;
         public static final int modifUsuario=0x7f04000b;
+        public static final int noDatosAmistoso=0x7f040035;
         public static final int noHayPuntuaciones=0x7f04001e;
         public static final int nombreAplicacion=0x7f040003;
         public static final int nuevaCopa=0x7f040005;
@@ -107,6 +107,7 @@ public final class R {
         public static final int seleccionaJugador1=0x7f04001f;
         public static final int seleccionaJugador2=0x7f040020;
         public static final int seleccionaJugadores=0x7f040021;
+        public static final int textoAlerta=0x7f040034;
         public static final int title_activity_gestion_usuarios=0x7f040009;
         public static final int title_activity_liga2_jugadores=0x7f04001a;
         public static final int title_activity_liga_num_usuarios=0x7f040019;
@@ -117,6 +118,7 @@ public final class R {
         public static final int title_activity_pcrearusuario=0x7f040011;
         public static final int title_activity_seleccion_de_jugadores=0x7f040018;
         public static final int title_activity_ver_usuarios=0x7f040010;
+        public static final int tituloAlerta=0x7f040033;
         public static final int usuario=0x7f04002a;
         public static final int usuarioPrueba0=0x7f040032;
         public static final int usuariosBD=0x7f040028;

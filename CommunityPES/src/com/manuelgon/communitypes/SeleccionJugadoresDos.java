@@ -35,6 +35,7 @@ public class SeleccionJugadoresDos extends ListActivity{
 			jug2 = nombre;
 			i.putExtra("jug1", jug1);
 			i.putExtra("jug2", jug2);
+			i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 			startActivity(i);
 		}
 		

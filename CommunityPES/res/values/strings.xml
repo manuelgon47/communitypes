@@ -52,5 +52,8 @@
     <string name="empatados">Empatados</string>
     <string name="cero">0</string>
     <string name="usuarioPrueba0">Alias</string>
+    <string name="tituloAlerta">Usuario existente</string>
+    <string name="textoAlerta">El nombre de usuario elegido ya esta siendo usado. Por favor elija otro. Muchas gracias.</string>
+    <string name="noDatosAmistoso">No ha introducido el resultado del partido, por favor, introduzca el resutado antes de continuar.</string>
 
 </resources>

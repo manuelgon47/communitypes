@@ -37,22 +37,28 @@ public class ResultadoPartidoAmistoso extends Activity{
 	public void lanzarMenuPrincipal (View view){
 		EditText resjUno = (EditText)findViewById(R.id.resultadoJugador1);
 		EditText resjDos = (EditText)findViewById(R.id.resultadoJugador2);
-		String auxUno = resjUno.getText().toString();
-		String auxDos = resjDos.getText().toString();
-//		System.out.print("Resultado: "+auxUno);
-//		System.out.println(" - "+auxDos);
-		Integer rjuno = Integer.parseInt(auxUno);
-		Integer rjdos = Integer.parseInt(auxDos);
-		if(rjuno == rjdos){
-			empate=true;
-		}else if(rjuno > rjdos){
-			ganador = jugador1;
+		System.out.println("Imprimo length de resjug1: "+resjUno.getText().length());
+		if(resjUno.getText().length() > 0 && resjDos.getText().length() > 0){
+			String auxUno = resjUno.getText().toString();
+			String auxDos = resjDos.getText().toString();
+	//		System.out.print("Resultado: "+auxUno);
+	//		System.out.println(" - "+auxDos);
+			Integer rjuno = Integer.parseInt(auxUno);
+			Integer rjdos = Integer.parseInt(auxDos);
+			if(rjuno == rjdos){
+				empate=true;
+			}else if(rjuno > rjdos){
+				ganador = jugador1;
+			}else{
+				ganador = jugador2;
+			}
+			CommunityPES.baseDatos.partidoAmistoso(jugador1, jugador2, ganador, rjuno, rjdos, empate);
+			Intent i = new Intent(this, CommunityPES.class);
+			i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+			startActivity(i);
 		}else{
-			ganador = jugador2;
+			Toast.makeText(this, R.string.noDatosAmistoso, Toast.LENGTH_LONG).show();
 		}
-		
-		Intent i = new Intent(this, CommunityPES.class);
-		startActivity(i);
 	}
 	
 }

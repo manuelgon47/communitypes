@@ -30,6 +30,7 @@ public class VerUsuariosExistentes extends ListActivity{
 		String nombre = o.toString();
 		Intent i = new Intent(this, EstadisticasUsuario.class);
 		i.putExtra("usuario", nombre);
+		i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 		startActivity(i);
 
 	}

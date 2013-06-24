@@ -19,6 +19,7 @@ public class NumeroJugadores extends Activity{
 		Intent i = new Intent(this, SeleccionJugadoresDos.class);
 		TextView numeroJugadores = (TextView) findViewById(R.id.numeroJugadores);
 		i.putExtra("numJugadores", numeroJugadores.toString());
+		i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 		startActivity(i);
 	}
 	
