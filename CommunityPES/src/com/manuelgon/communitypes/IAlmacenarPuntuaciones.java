@@ -13,4 +13,9 @@ public interface IAlmacenarPuntuaciones {
 	void partidoAmistoso(String jugadorUno, String jugadorDos, String ganador, Integer resjuguno, Integer resjugdos, Boolean empate);
 	void empate (String jugadorUno, String jugadorDos, Integer resjuguno, Integer resjugdos);
 	Integer obtenerNumeroPartidosJugados(String nombreJugador);
+	Integer obtenerNumeroPartidosGanados(String nombreJugador);
+	Integer obtenerNumeroPartidosPerdidos(String nombreJugador);
+	Integer obtenerNumeroPartidosEmpatados(String nombreJugador);
+	Integer obtenerNumeroGolesFavor(String nombreJugador);
+	Integer obtenerNumeroGolesContra(String nombreJugador);
 }

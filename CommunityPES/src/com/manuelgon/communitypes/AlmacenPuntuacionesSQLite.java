@@ -59,7 +59,31 @@ public class AlmacenPuntuacionesSQLite extends SQLiteOpenHelper implements IAlma
 
 	@Override
 	public void guardarPuntuaciones(String jugador, Integer golesFavor,	Integer golesContra, Boolean ganado) {
-		// TODO Auto-generated method stub
+		// Saco lo que hay ahora mismo en la base de datos de forma más eficiente
+		Usuario jug = obtenerUsuario(jugador);
+		Integer jugadosJug = jug.getJugados();
+		Integer empatadosJug = jug.getEmpatados();
+		Integer gfJug =jug.getGolesFavor();
+		Integer gcJug = jug.getGolesContra();
+		Integer ganadosJug = jug.getGanados();
+		Integer perdidosJug = jug.getPerdidos();
+		if(ganado){
+			ganadosJug +=1;
+		}else{
+			perdidosJug +=1;
+		}
+		SQLiteDatabase db = getWritableDatabase();
+		
+		//Meto los nuevos valores en un contentValues
+		ContentValues valoresJug = new ContentValues();
+		valoresJug.put("golesFavor", gfJug+golesFavor);
+		valoresJug.put("golesContra", gcJug+golesContra);
+		valoresJug.put("jugados", jugadosJug+1);
+		valoresJug.put("ganados", ganadosJug);
+		valoresJug.put("perdidos", perdidosJug);
+		
+		//Actualizo en BD metiendo el contentValues
+		db.update("Amistosos", valoresJug, "nombreUsuario='"+jugador+"'", null);
 		
 	}
 
@@ -122,9 +146,16 @@ public class AlmacenPuntuacionesSQLite extends SQLiteOpenHelper implements IAlma
 
 	@Override
 	public void partidoAmistoso(String jugadorUno, String jugadorDos, String ganador, Integer resjuguno, Integer resjugdos, Boolean empate) {
-		// TODO Auto-generated method stub
 		if(empate){
-			
+			empate(jugadorUno, jugadorDos, resjuguno, resjugdos);
+		}else{
+			if(ganador.equals(jugadorUno)){
+				guardarPuntuaciones(jugadorUno, resjuguno, resjugdos, true);
+				guardarPuntuaciones(jugadorDos, resjugdos, resjuguno, false);
+			}else{
+				guardarPuntuaciones(jugadorDos, resjugdos, resjuguno, true);
+				guardarPuntuaciones(jugadorUno, resjuguno, resjugdos, false);
+			}
 		}
 		
 	}
@@ -139,17 +170,108 @@ public class AlmacenPuntuacionesSQLite extends SQLiteOpenHelper implements IAlma
 
 	@Override
 	public void empate(String jugadorUno, String jugadorDos, Integer resjuguno,	Integer resjugdos) {
-		// TODO Auto-generated method stub
-		Integer jugadosJugUno = obtenerNumeroPartidosJugados(jugadorUno);
-		Integer jugadosJugDos = obtenerNumeroPartidosJugados(jugadorDos);
-		SQLiteDatabase db = getWritableDatabase();
-		System.out.println("ESTO ES UNA PRUEBA ----------------------------------------------------");
-		ContentValues valoresJugUno = new ContentValues();
-		valoresJugUno.put("nombreUsuario", jugadorUno);
-		valoresJugUno.put("golesFavor", resjuguno);
-		valoresJugUno.put("golesContra", resjugdos);
-		valoresJugUno.put("jugados", jugadosJugUno+1);
+		// Saco lo que hay ahora mismo en la base de datos
+//		Integer jugadosJugUno = obtenerNumeroPartidosJugados(jugadorUno);
+//		Integer jugadosJugDos = obtenerNumeroPartidosJugados(jugadorDos);
+//		Integer empatadosJugUno = obtenerNumeroPartidosEmpatados(jugadorUno);
+//		Integer empatadosJugDos = obtenerNumeroPartidosEmpatados(jugadorDos);
+//		Integer gfJugUno = obtenerNumeroGolesFavor(jugadorUno);
+//		Integer gfJugDos = obtenerNumeroGolesFavor(jugadorDos);
+//		Integer gcJugUno = obtenerNumeroGolesContra(jugadorUno);
+//		Integer gcJugDos = obtenerNumeroGolesContra(jugadorDos);
 		
+		// Saco lo que hay ahora mismo en la base de datos de forma más eficiente
+		Usuario jug1 = obtenerUsuario(jugadorUno);
+		Usuario jug2 = obtenerUsuario(jugadorDos);
+		Integer jugadosJugUno = jug1.getJugados();
+		Integer jugadosJugDos = jug2.getJugados();
+		Integer empatadosJugUno = jug1.getEmpatados();
+		Integer empatadosJugDos = jug2.getEmpatados();
+		Integer gfJugUno =jug1.getGolesFavor();
+		Integer gfJugDos = jug2.getGolesFavor();
+		Integer gcJugUno = jug1.getGolesContra();
+		Integer gcJugDos = jug2.getGolesContra();
+		SQLiteDatabase db = getWritableDatabase();
+		System.out.println("ESTO ES UNA PRUEBA 1 ----------------------------------------------------");
+		
+		//JUGADOR 1
+		
+		//Meto los nuevos valores en un contentValues
+		ContentValues valoresJugUno = new ContentValues();
+		valoresJugUno.put("golesFavor", gfJugUno+resjuguno);
+		valoresJugUno.put("golesContra", gcJugUno+resjugdos);
+		valoresJugUno.put("jugados", jugadosJugUno+1);
+		valoresJugUno.put("empatados", empatadosJugUno+1);
+		
+		//Actualizo en BD metiendo el contentValues
+		db.update("Amistosos", valoresJugUno, "nombreUsuario='"+jugadorUno+"'", null);
+		System.out.println("FIN DE LA PRUEBA 1 ----------------------------------------------------");
+		
+		
+		//JUGADOR 2
+		System.out.println("ESTO ES UNA PRUEBA 2 ----------------------------------------------------");
+		//Meto los nuevos valores en un contentValues
+		ContentValues valoresJugDos = new ContentValues();
+		valoresJugDos.put("golesFavor", gfJugDos+resjugdos);
+		valoresJugDos.put("golesContra", gcJugDos+resjuguno);
+		valoresJugDos.put("jugados", jugadosJugDos+1);
+		valoresJugDos.put("empatados", empatadosJugDos+1);
+		
+		//Actualizo en BD metiendo el contentValues
+		db.update("Amistosos", valoresJugDos, "nombreUsuario='"+jugadorDos+"'", null);
+		System.out.println("FIN DE LA PRUEBA 2 ----------------------------------------------------");
+		
+		
+	}
+
+	@Override
+	public Integer obtenerNumeroPartidosGanados(String nombreJugador) {
+		Integer ret = 0;
+		SQLiteDatabase db = getReadableDatabase();
+		Cursor cursor = db.rawQuery("SELECT ganados FROM Amistosos WHERE nombreUsuario='"+nombreJugador+"'", null);
+		cursor.moveToNext();
+		ret = cursor.getInt(0);
+		return ret;
+	}
+
+	@Override
+	public Integer obtenerNumeroPartidosPerdidos(String nombreJugador) {
+		Integer ret = 0;
+		SQLiteDatabase db = getReadableDatabase();
+		Cursor cursor = db.rawQuery("SELECT perdidos FROM Amistosos WHERE nombreUsuario='"+nombreJugador+"'", null);
+		cursor.moveToNext();
+		ret = cursor.getInt(0);
+		return ret;
+	}
+
+	@Override
+	public Integer obtenerNumeroPartidosEmpatados(String nombreJugador) {
+		Integer ret = 0;
+		SQLiteDatabase db = getReadableDatabase();
+		Cursor cursor = db.rawQuery("SELECT empatados FROM Amistosos WHERE nombreUsuario='"+nombreJugador+"'", null);
+		cursor.moveToNext();
+		ret = cursor.getInt(0);
+		return ret;
+	}
+
+	@Override
+	public Integer obtenerNumeroGolesFavor(String nombreJugador) {
+		Integer ret = 0;
+		SQLiteDatabase db = getReadableDatabase();
+		Cursor cursor = db.rawQuery("SELECT golesFavor FROM Amistosos WHERE nombreUsuario='"+nombreJugador+"'", null);
+		cursor.moveToNext();
+		ret = cursor.getInt(0);
+		return ret;
+	}
+
+	@Override
+	public Integer obtenerNumeroGolesContra(String nombreJugador) {
+		Integer ret = 0;
+		SQLiteDatabase db = getReadableDatabase();
+		Cursor cursor = db.rawQuery("SELECT golesContra FROM Amistosos WHERE nombreUsuario='"+nombreJugador+"'", null);
+		cursor.moveToNext();
+		ret = cursor.getInt(0);
+		return ret;
 	}
 
 
