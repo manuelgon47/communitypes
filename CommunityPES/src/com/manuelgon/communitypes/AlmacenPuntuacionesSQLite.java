@@ -1,7 +1,5 @@
 package com.manuelgon.communitypes;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Vector;
 
 import android.content.ContentValues;
@@ -62,7 +60,6 @@ public class AlmacenPuntuacionesSQLite extends SQLiteOpenHelper implements IAlma
 		// Saco lo que hay ahora mismo en la base de datos de forma más eficiente
 		Usuario jug = obtenerUsuario(jugador);
 		Integer jugadosJug = jug.getJugados();
-		Integer empatadosJug = jug.getEmpatados();
 		Integer gfJug =jug.getGolesFavor();
 		Integer gcJug = jug.getGolesContra();
 		Integer ganadosJug = jug.getGanados();

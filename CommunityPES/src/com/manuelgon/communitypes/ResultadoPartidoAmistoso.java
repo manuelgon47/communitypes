@@ -12,8 +12,8 @@ public class ResultadoPartidoAmistoso extends Activity{
 
 	private String jugador1 = "";
 	private String jugador2 = "";
-	private int resJug1 = 0;
-	private int resjug2 = 0;
+//	private int resJug1 = 0;
+//	private int resjug2 = 0;
 	private String ganador = "";
 	private Boolean empate = false;
 	
